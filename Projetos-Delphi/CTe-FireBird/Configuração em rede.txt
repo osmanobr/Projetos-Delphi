@@ -1,0 +1,2 @@
+firewall/regras de segurança de conexão/nova regra/personalizado/protocolo e portas/TCP/porta do ponto de/porta especifica/3050/FireBird
+firewall/regras de entrada/nova regra/porta/3050/firebird

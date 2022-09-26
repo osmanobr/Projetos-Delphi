@@ -1,0 +1,50 @@
+object FrmPrincipal: TFrmPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'ReportGerador'
+  ClientHeight = 494
+  ClientWidth = 760
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  WindowState = wsMaximized
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 185
+    Height = 494
+    Align = alLeft
+    BorderWidth = 4
+    TabOrder = 0
+    object SBConexao: TSpeedButton
+      Left = 5
+      Top = 5
+      Width = 175
+      Height = 33
+      Align = alTop
+      Caption = 'Conex'#227'o'
+      OnClick = SBConexaoClick
+      ExplicitLeft = 8
+      ExplicitTop = 8
+      ExplicitWidth = 161
+    end
+  end
+  object PannelMain: TPanel
+    Left = 185
+    Top = 0
+    Width = 575
+    Height = 494
+    Align = alClient
+    TabOrder = 1
+    ExplicitLeft = 240
+    ExplicitTop = 104
+    ExplicitWidth = 185
+    ExplicitHeight = 41
+  end
+end
