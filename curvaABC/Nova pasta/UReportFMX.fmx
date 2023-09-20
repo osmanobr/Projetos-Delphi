@@ -1,0 +1,469 @@
+Object FrmReport: TFrmReport
+  Left = 0
+  Top = 0
+  Caption = 'Report'
+  ClientHeight = 490
+  ClientWidth = 827
+  
+  
+  
+  
+  
+  
+  
+  OnCreate = FormCreate
+  
+  
+
+    Object RLReport1: TRLReport
+      Left = 8
+      Top = 8
+      Width = 794
+      Height = 1123
+      DataSource = FrmCurvaABC.DS
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Style = []
+      ExpressionParser = RLExpressionParser1
+
+        Object RLBand1: TRLBand
+          Left = 38
+          Top = 38
+          Width = 718
+          Height = 78
+          AutoSize = True
+          BandType = btHeader
+
+            Object RLLEmpresa: TRLLabel
+              Left = 0
+              Top = 0
+              Width = 718
+              Height = 18
+              Align = faTop
+              Alignment = taCenter
+              Caption = 'Nome da Empresa'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -16
+              Font.Name = 'Arial'
+              Font.Style = []
+              ParentFont = False
+              end
+
+            Object RLLTitulo: TRLLabel
+              Position.X = 0
+              Position.Y = 18
+              Width = 718
+              Height = 44
+              Align = faTop
+              Alignment = taCenter
+              AutoSize = False
+              Caption = 'Relat'#243'rio Curva ABC - Venda Itens'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clBlack
+              Font.Height = -24
+              Font.Name = 'Calibri'
+              Font.Style = [fsBold]
+              Layout = tlCenter
+              ParentFont = False
+              end
+
+            Object RLLabel1: TRLLabel
+              Position.X = 0
+              Position.Y = 62
+              Width = 718
+              Height = 16
+              Align = faTop
+              Alignment = taRightJustify
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clBlack
+              Font.Height = -13
+              Font.Name = 'Arial'
+              Font.Style = []
+              ParentFont = False
+              end
+          end
+
+        Object RLBand4: TRLBand
+          Position.X = 38
+          Position.Y = 116
+          Width = 718
+          Height = 22
+          BandType = btColumnHeader
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clBlack
+          Font.Height = -15
+          Font.Name = 'Calibri'
+          Font.Style = [fsBold]
+          ParentFont = False
+
+            Object RLLabel2: TRLLabel
+              Position.X = 0
+              Position.Y = 0
+              Width = 65
+              Height = 22
+              Align = faLeft
+              AutoSize = False
+              Caption = 'ID'
+              end
+
+            Object RLLabel3: TRLLabel
+              Position.X = 65
+              Position.Y = 0
+              Width = 427
+              Height = 22
+              Align = faClient
+              AutoSize = False
+              Caption = 'Nome do Produto'
+              end
+
+            Object RLLabel4: TRLLabel
+              Position.X = 492
+              Position.Y = 0
+              Width = 75
+              Height = 22
+              Align = faRight
+              Alignment = taRightJustify
+              AutoSize = False
+              Caption = 'Vl Vendido'
+              end
+
+            Object RLLabel5: TRLLabel
+              Position.X = 567
+              Position.Y = 0
+              Width = 74
+              Height = 22
+              Align = faRight
+              Alignment = taRightJustify
+              AutoSize = False
+              Caption = 'Percentual'
+              end
+
+            Object RLLabel6: TRLLabel
+              Position.X = 641
+              Position.Y = 0
+              Width = 77
+              Height = 22
+              Align = faRight
+              Alignment = taRightJustify
+              AutoSize = False
+              Caption = 'Acumulado'
+              end
+          end
+
+        Object RLGroup1: TRLGroup
+          Left = 38
+          Top = 138
+          Width = 718
+          Height = 193
+          DataFields = 'classe'
+          BeforePrint = RLGroup1BeforePrint
+
+            Object RLBand5: TRLBand
+              Position.X = 0
+              Position.Y = 0
+              Width = 718
+              Height = 34
+              BandType = btColumnHeader
+              Borders.Sides = sdCustom
+              Borders.DrawLeft = False
+              Borders.DrawTop = True
+              Borders.DrawRight = False
+              Borders.DrawBottom = False
+
+                Object RLLabel7: TRLLabel
+                  Position.X = 0
+                  Position.Y = 1
+                  Width = 59
+                  Height = 33
+                  Align = faLeft
+                  AutoSize = False
+                  Caption = 'Classe'
+                  Font.Charset = ANSI_CHARSET
+                  Font.Color = clBlack
+                  Font.Height = -16
+                  Font.Name = 'Calibri'
+                  Font.Style = [fsBold]
+                  Layout = tlCenter
+                  ParentFont = False
+                  end
+
+                Object RLDBText6: TRLDBText
+                  Left = 59
+                  Top = 1
+                  Width = 152
+                  Height = 33
+                  Align = faLeft
+                  AutoSize = False
+                  DataField = 'classe'
+                  DataSource = FrmCurvaABC.DS
+                  Font.Charset = DEFAULT_CHARSET
+                  Font.Color = clBlack
+                  Font.Height = -21
+                  Font.Name = 'Arial'
+                  Font.Style = [fsBold]
+                  Layout = tlCenter
+                  ParentFont = False
+                  Text = ''
+                  end
+              end
+
+            Object RLBand2: TRLBand
+              Position.X = 0
+              Position.Y = 34
+              Width = 718
+              Height = 15
+              AutoSize = True
+              Color = clGradientInactiveCaption
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clBlack
+              Font.Height = -13
+              Font.Name = 'Calibri'
+              Font.Style = []
+              ParentColor = False
+              ParentFont = False
+              Transparent = False
+              BeforePrint = RLBand2BeforePrint
+
+                Object RLDBText1: TRLDBText
+                  Position.X = 0
+                  Position.Y = 0
+                  Width = 65
+                  Height = 15
+                  AutoSize = False
+                  DataField = 'id_produto'
+                  DataSource = FrmCurvaABC.DS
+                  Holder = RLLabel2
+                  Text = ''
+                  Transparent = False
+                  end
+
+                Object RLDBText2: TRLDBText
+                  Position.X = 65
+                  Position.Y = 0
+                  Width = 427
+                  Height = 15
+                  AutoSize = False
+                  DataField = 'nome_produto'
+                  DataSource = FrmCurvaABC.DS
+                  Holder = RLLabel3
+                  Text = ''
+                  Transparent = False
+                  end
+
+                Object RLDBText3: TRLDBText
+                  Position.X = 492
+                  Position.Y = 0
+                  Width = 75
+                  Height = 15
+                  Alignment = taRightJustify
+                  AutoSize = False
+                  DataField = 'valor_vendido'
+                  DataSource = FrmCurvaABC.DS
+                  DisplayMask = '##0,0.00'
+                  Holder = RLLabel4
+                  Text = ''
+                  Transparent = False
+                  end
+
+                Object RLDBText4: TRLDBText
+                  Position.X = 567
+                  Position.Y = 0
+                  Width = 74
+                  Height = 15
+                  Alignment = taRightJustify
+                  AutoSize = False
+                  DataField = 'percentual'
+                  DataSource = FrmCurvaABC.DS
+                  DisplayMask = '0,0.00%'
+                  Holder = RLLabel5
+                  Text = ''
+                  Transparent = False
+                  end
+
+                Object RLDBText5: TRLDBText
+                  Position.X = 641
+                  Position.Y = 0
+                  Width = 77
+                  Height = 15
+                  Alignment = taRightJustify
+                  AutoSize = False
+                  DataField = 'perc_acumulado'
+                  DataSource = FrmCurvaABC.DS
+                  DisplayMask = '0,0.00%'
+                  Holder = RLLabel6
+                  Text = ''
+                  Transparent = False
+                  end
+              end
+
+            Object RLBand3: TRLBand
+              Position.X = 0
+              Position.Y = 49
+              Width = 718
+              Height = 18
+              AutoSize = True
+              BandType = btSummary
+
+                Object RLDBResult1: TRLDBResult
+                  Left = 492
+                  Top = 2
+                  Width = 75
+                  Height = 16
+                  Alignment = taRightJustify
+                  AutoSize = False
+                  Borders.Sides = sdCustom
+                  Borders.DrawLeft = False
+                  Borders.DrawTop = True
+                  Borders.DrawRight = False
+                  Borders.DrawBottom = False
+                  DataField = 'valor_vendido'
+                  DataSource = FrmCurvaABC.DS
+                  DisplayMask = '##0,0.00'
+                  Font.Charset = ANSI_CHARSET
+                  Font.Color = clBlack
+                  Font.Height = -13
+                  Font.Name = 'Calibri'
+                  Font.Style = [fsBold]
+                  Holder = RLLabel4
+                  Info = riSum
+                  ParentFont = False
+                  Text = ''
+                  end
+
+                Object RLDBResult2: TRLDBResult
+                  Position.X = 567
+                  Position.Y = 2
+                  Width = 74
+                  Height = 16
+                  Alignment = taRightJustify
+                  AutoSize = False
+                  Borders.Sides = sdCustom
+                  Borders.DrawLeft = False
+                  Borders.DrawTop = True
+                  Borders.DrawRight = False
+                  Borders.DrawBottom = False
+                  DataField = 'percentual'
+                  DataSource = FrmCurvaABC.DS
+                  DisplayMask = '0,0.00%'
+                  Font.Charset = ANSI_CHARSET
+                  Font.Color = clBlack
+                  Font.Height = -13
+                  Font.Name = 'Calibri'
+                  Font.Style = [fsBold]
+                  Holder = RLLabel5
+                  Info = riSum
+                  ParentFont = False
+                  Text = ''
+                  end
+              end
+          end
+
+        Object RLBand6: TRLBand
+          Position.X = 38
+          Position.Y = 331
+          Width = 718
+          Height = 18
+          AutoSize = True
+          BandType = btSummary
+
+            Object RLDBResult4: TRLDBResult
+              Position.X = 492
+              Position.Y = 2
+              Width = 75
+              Height = 16
+              Alignment = taRightJustify
+              AutoSize = False
+              Borders.Sides = sdCustom
+              Borders.DrawLeft = False
+              Borders.DrawTop = True
+              Borders.DrawRight = False
+              Borders.DrawBottom = False
+              DataField = 'valor_vendido'
+              DataSource = FrmCurvaABC.DS
+              DisplayMask = '##0,0.00'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clBlack
+              Font.Height = -13
+              Font.Name = 'Calibri'
+              Font.Style = [fsBold]
+              Holder = RLLabel4
+              Info = riSum
+              ParentFont = False
+              Text = ''
+              end
+
+            Object RLDBResult5: TRLDBResult
+              Position.X = 567
+              Position.Y = 2
+              Width = 74
+              Height = 16
+              Alignment = taRightJustify
+              AutoSize = False
+              Borders.Sides = sdCustom
+              Borders.DrawLeft = False
+              Borders.DrawTop = True
+              Borders.DrawRight = False
+              Borders.DrawBottom = False
+              DataField = 'percentual'
+              DataSource = FrmCurvaABC.DS
+              DisplayMask = '0,0.00%'
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clBlack
+              Font.Height = -13
+              Font.Name = 'Calibri'
+              Font.Style = [fsBold]
+              Holder = RLLabel5
+              Info = riSum
+              ParentFont = False
+              Text = ''
+              end
+          end
+      end
+
+    Object RLPreviewSetup1: TRLPreviewSetup
+      Left = 248
+      Top = 376
+      end
+
+    Object RLPDFFilter1: TRLPDFFilter
+      DocumentInfo.Creator = 
+      'FortesReport Community Edition v4.0 \251 Copyright '#169' 1999-2016 F' +
+      'ortes Inform'#225'tica'
+      DisplayName = 'Documento PDF'
+      Left = 344
+      Top = 384
+      end
+
+    Object RLXLSFilter1: TRLXLSFilter
+      DisplayName = 'Planilha Excel 97-2013'
+      Left = 384
+      Top = 376
+      end
+
+    Object RLHTMLFilter1: TRLHTMLFilter
+      DocumentStyle = dsCSS2
+      DisplayName = 'P'#225'gina da Web'
+      Left = 440
+      Top = 384
+      end
+
+    Object RLRichFilter1: TRLRichFilter
+      DisplayName = 'Formato RichText'
+      Left = 488
+      Top = 384
+      end
+
+    Object RLXLSXFilter1: TRLXLSXFilter
+      DisplayName = 'Planilha Excel'
+      Left = 552
+      Top = 384
+      end
+
+    Object RLExpressionParser1: TRLExpressionParser
+      Left = 616
+      Top = 384
+      end
+  end
